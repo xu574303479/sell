@@ -8,4 +8,9 @@ spring:
     show-sql: true
 server:
   context-path: /sell
+logging:
+  pattern:
+    console: "%d - %msg%n"
+  path: D://JAVA/var/log/tomcat/sell/error.%d.log
+
 
