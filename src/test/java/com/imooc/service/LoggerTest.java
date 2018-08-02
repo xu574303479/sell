@@ -1,6 +1,5 @@
 package com.imooc.service;
 
-import com.imooc.utils.LogUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
