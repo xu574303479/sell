@@ -1,4 +1,4 @@
-package com.imooc.utils;
+package com.imooc.utils.comm;
 
 import java.io.Serializable;
 import java.math.BigDecimal;

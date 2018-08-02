@@ -8,11 +8,10 @@ import com.aliyuncs.http.MethodType;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
 import com.imooc.dataobject.Sms;
+import com.imooc.utils.comm.CommonUtil;
 import org.apache.commons.beanutils.PropertyUtils;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.beans.PropertyDescriptor;
 import java.io.*;
 import java.lang.reflect.Array;
