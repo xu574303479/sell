@@ -28,7 +28,7 @@ public class LoggerTest {
         logger.debug("===========================debug");
         logger.info("===========================info");
         try {
-            int a = 1 / 0;
+//            int a = 1 / 0;
         } catch (Exception e) {
             e.printStackTrace();
             logger.error("=================" + e.getMessage(), e);
@@ -41,7 +41,7 @@ public class LoggerTest {
         LogUtils.logInfo("===========================INFO ~");
         LogUtils.logDebug("===========================DEBUG ~");
         try {
-            int a = 1 / 0;
+//            int a = 1 / 0;
         } catch (Exception e) {
             e.printStackTrace();
             LogUtils.logError("===========================ERROR~", e);

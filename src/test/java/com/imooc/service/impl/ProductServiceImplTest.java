@@ -47,11 +47,11 @@ public class ProductServiceImplTest {
     @Test
     public void save() throws Exception {
         ProductInfo productInfo = new ProductInfo();
-        productInfo.setProductId("21817");
+        productInfo.setProductId("219171");
         productInfo.setProductName("皮蛋粥11");
-        productInfo.setProductPrice(new BigDecimal(3.2));
+        productInfo.setProductPrice(new BigDecimal(6.6));
         productInfo.setProductStock(100);
-        productInfo.setProductDescription("很好喝的粥");
+        productInfo.setProductDescription("很好吃的");
         productInfo.setProductIcon("https://gss2.bdstatic.com/-fo3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D730/sign=65267135dd58ccbf1bbcb73929dabcd4/fd039245d688d43f516c4975711ed21b0ff43b74.jpg");
         productInfo.setProductStatus(0);
         productInfo.setCategoryType(2);

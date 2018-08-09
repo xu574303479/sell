@@ -2,6 +2,7 @@ package com.imooc.service;
 
 
 import com.imooc.dataobject.ProductInfo;
+import com.imooc.dto.CartDTO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -24,7 +25,7 @@ public interface ProductService {
      * @return
      * @throws Exception
      */
-    ProductInfo findOne(String productId) throws Exception;
+    ProductInfo findOne(String productId);
 
 
     /**
@@ -33,7 +34,7 @@ public interface ProductService {
      * @return
      * @throws Exception
      */
-    List<ProductInfo> findUpAll() throws Exception;
+    List<ProductInfo> findUpAll();
 
 
     /**
@@ -43,7 +44,7 @@ public interface ProductService {
      * @return
      * @throws Exception
      */
-    Page<ProductInfo> findAll(Pageable pageable) throws Exception;
+    Page<ProductInfo> findAll(Pageable pageable);
 
     /**
      * 保存商品
@@ -52,7 +53,22 @@ public interface ProductService {
      * @return
      * @throws Exception
      */
-    ProductInfo save(ProductInfo productInfo) throws Exception;
+    ProductInfo save(ProductInfo productInfo);
+
+
+    /**
+     * 加库存
+     *
+     * @param cartDTOList
+     */
+    void increaseStock(List<CartDTO> cartDTOList);
+
+    /**
+     * 减库存
+     *
+     * @param cartDTOList
+     */
+    void decreaseStock(List<CartDTO> cartDTOList);
 
 
 }

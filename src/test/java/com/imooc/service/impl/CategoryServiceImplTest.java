@@ -1,10 +1,12 @@
 package com.imooc.service.impl;
 
 import com.imooc.dataobject.ProductCategory;
+import com.imooc.service.CategoryService;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -16,14 +18,15 @@ import java.util.List;
 public class CategoryServiceImplTest {
 
     @Autowired
-    private CategoryServiceImpl categoryService;
+    @Qualifier("categoryServiceImpl")
+    private CategoryService categoryService;
 
 
     @Test
     public void findOne() throws Exception {
         ProductCategory productCategory = categoryService.findOne(1);
 
-        Assert.assertEquals(new Integer(3), productCategory.getCategoryId());
+        Assert.assertEquals(new Integer(1), productCategory.getCategoryId());
 
     }
 

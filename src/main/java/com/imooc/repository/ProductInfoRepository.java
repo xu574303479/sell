@@ -21,7 +21,7 @@ public interface ProductInfoRepository extends JpaRepository<ProductInfo, String
      * @param productStatus 状态, 0正常1下架
      * @return
      */
-    List<ProductInfo> findByProductStatus(Integer productStatus) throws Exception;
+    List<ProductInfo> findByProductStatus(Integer productStatus);
 
 
 }

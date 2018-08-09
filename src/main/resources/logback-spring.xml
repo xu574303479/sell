@@ -11,6 +11,8 @@
     <property name="maxHistory" value="30"/>
     <!-- 日志输出格式 -->
     <property name="logPattern" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n"/>
+    <!-- 日志生成文件编码 -->
+    <property name="logCharset" value="UTF-8"/>
 
 
     <!--配置控制台的输出-->
@@ -31,6 +33,7 @@
         </filter>
         <encoder>
             <pattern>${logPattern}</pattern>
+            <charset>${logCharset}</charset>
         </encoder>
         <!--滚动策略：每天一个日志文件-->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
@@ -51,6 +54,7 @@
         </filter>
         <encoder>
             <pattern>${logPattern}</pattern>
+            <charset>${logCharset}</charset>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <fileNamePattern>${logPath}/%d{yyyy-MM-dd}/info.%d.log</fileNamePattern>
@@ -58,7 +62,7 @@
         </rollingPolicy>
     </appender>
 
-    <root level="error">
+    <root level="info">
         <appender-ref ref="consoleLog"/>
         <appender-ref ref="fileErrorLog"/>
         <appender-ref ref="fileInfoLog"/>

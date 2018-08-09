@@ -20,14 +20,14 @@ public interface CategoryService {
      * @param categoryId 类目id
      * @return
      */
-    ProductCategory findOne(Integer categoryId) throws Exception;
+    ProductCategory findOne(Integer categoryId);
 
     /**
      * 查询所有类目---后台管理
      *
      * @return
      */
-    List<ProductCategory> findAll() throws Exception;
+    List<ProductCategory> findAll();
 
     /**
      * 通过类目类型查询所有类目
@@ -35,7 +35,7 @@ public interface CategoryService {
      * @param category
      * @return
      */
-    List<ProductCategory> findByCategoryTypeIn(List<Integer> category) throws Exception;
+    List<ProductCategory> findByCategoryTypeIn(List<Integer> category);
 
 
     /**
@@ -44,6 +44,6 @@ public interface CategoryService {
      * @param productCategory
      * @return
      */
-    ProductCategory save(ProductCategory productCategory) throws Exception;
+    ProductCategory save(ProductCategory productCategory);
 
 }

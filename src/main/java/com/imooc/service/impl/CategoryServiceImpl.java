@@ -16,7 +16,7 @@ import java.util.List;
  * @version 1.0.0
  * @create 2018-06-19 23:18:00
  */
-@Service
+@Service("categoryServiceImpl")
 public class CategoryServiceImpl implements CategoryService {
 
     @Autowired
@@ -24,22 +24,22 @@ public class CategoryServiceImpl implements CategoryService {
 
 
     @Override
-    public ProductCategory findOne(Integer categoryId) throws Exception {
+    public ProductCategory findOne(Integer categoryId){
         return repository.findOne(categoryId);
     }
 
     @Override
-    public List<ProductCategory> findAll() throws Exception {
+    public List<ProductCategory> findAll() {
         return repository.findAll();
     }
 
     @Override
-    public List<ProductCategory> findByCategoryTypeIn(List<Integer> category) throws Exception {
+    public List<ProductCategory> findByCategoryTypeIn(List<Integer> category)  {
         return repository.findByCategoryTypeIn(category);
     }
 
     @Override
-    public ProductCategory save(ProductCategory productCategory) throws Exception {
+    public ProductCategory save(ProductCategory productCategory)  {
         return repository.save(productCategory);
     }
 }
