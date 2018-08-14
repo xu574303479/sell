@@ -22,10 +22,10 @@ public class TestMt3 {
         HttpClientUtil util = new HttpClientUtil(ip,  port, "/mt/MT3.ashx");
         
         // 用户名
-        String user = "multidime";
+        String user = "XXXXXX";
 
         //密码：
-        String pwd = "EnyO2hpZ";
+        String pwd = "XXXXXX";
 
 
         String ServiceID = "SEND";

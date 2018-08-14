@@ -5,7 +5,6 @@
 package com.imooc.utils.ismsmtdemo;
 
 /**
- *
  * @author Administrator
  */
 public class WebNetEncode {
@@ -21,7 +20,7 @@ public class WebNetEncode {
         return "0x" + str;//0x表示十六进制
     }
 
-//转换十六进制编码为字符串
+    //转换十六进制编码为字符串
     public static String toStringHex(String s) {
         if ("0x".equals(s.substring(0, 2))) {
             s = s.substring(2);
@@ -43,45 +42,48 @@ public class WebNetEncode {
         return s;
     }
 
-     /** *//**
+    /** */
+    /**
      * 把字节数组转换成16进制字符串
+     *
      * @param bArray
      * @return
      */
- public static final String bytesToHexString(byte[] bArray) {
-     StringBuffer sb = new StringBuffer(bArray.length);
-     String sTemp;
-     for (int i = 0; i < bArray.length; i++) {
-      sTemp = Integer.toHexString(0xFF & bArray[i]);
-      if (sTemp.length() < 2)
-       sb.append(0);
-      sb.append(sTemp.toUpperCase());
-     }
-     return sb.toString();
- }  
+    public static final String bytesToHexString(byte[] bArray) {
+        StringBuffer sb = new StringBuffer(bArray.length);
+        String sTemp;
+        for (int i = 0; i < bArray.length; i++) {
+            sTemp = Integer.toHexString(0xFF & bArray[i]);
+            if (sTemp.length() < 2)
+                sb.append(0);
+            sb.append(sTemp.toUpperCase());
+        }
+        return sb.toString();
+    }
 
 
     //字符编码成HEX
     public static String encodeHexStr(int dataCoding, String realStr) {
         String strhex = "";
         try {
-             byte[] bytSource = null;
+            byte[] bytSource = null;
             if (dataCoding == 15) {
                 bytSource = realStr.getBytes("GBK");
             } else if (dataCoding == 3) {
                 bytSource = realStr.getBytes("ISO-8859-1");
             } else if (dataCoding == 8) {
-                 bytSource = realStr.getBytes("UTF-16BE");
+                bytSource = realStr.getBytes("UTF-16BE");
             } else {
-                 bytSource = realStr.getBytes("ASCII");
+                bytSource = realStr.getBytes("ASCII");
             }
             strhex = bytesToHexString(bytSource);
-            
+
         } catch (Exception e) {
             e.printStackTrace();
         }
         return strhex;
     }
+
     //hex编码还原成字符
     public static String decodeHexStr(int dataCoding, String hexStr) {
         String strReturn = "";
