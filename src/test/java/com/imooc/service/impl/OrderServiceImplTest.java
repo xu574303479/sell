@@ -2,17 +2,22 @@ package com.imooc.service.impl;
 
 import com.imooc.BaseTest;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import static org.junit.Assert.*;
 
 
 public class OrderServiceImplTest extends BaseTest {
 
+    @Autowired
+    private OrderServiceImpl orderService;
 
     @Test
     public void create() {
 
 
+
+//        orderService.create();
 
 
     }

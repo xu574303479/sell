@@ -21,6 +21,10 @@ public class CategoryServiceImplTest {
     @Qualifier("categoryServiceImpl")
     private CategoryService categoryService;
 
+    @Autowired
+    @Qualifier("testImpl")
+    private CategoryService categoryService2;
+
 
     @Test
     public void findOne() throws Exception {

@@ -1,0 +1,127 @@
+ 面向接口编程的例子，生活中的实例来说明接口的概念
+
+
+
+package com.test;
+
+/**
+ * 定义PCI接口,定义主板PCI插槽规范
+ * @author yanerkang
+ *
+ */
+
+public interface PCI {
+
+	void start();
+
+	void stop();
+
+}
+
+
+package com.test;
+
+/**
+ * 网卡实现PCI接口规范
+ * @author yanerkang
+ *
+ */
+public class NetworkCard implements PCI {
+
+	public void start() {
+		System.out.println("Send...");
+	}
+
+	public void stop() {
+		System.out.println("Network stop!");
+	}
+
+}
+
+
+package com.test;
+/**
+ * 显卡实现PCI接口规范
+ * @author yanerkang
+ *
+ */
+public class GraphicCard  implements PCI{
+	
+	public void start() {
+		System.out.println("Display Graphic...");
+	}
+
+	public void stop() {
+		System.out.println("Display Graphic stop!");
+	}
+
+}
+
+
+package com.test;
+
+/**
+ * 声卡实现PCI接口规范
+ * @author yanerkang
+ *
+ */
+public class SoundCard implements PCI {
+	public void start() {
+		System.out.println("Du du...");
+	}
+
+	public void stop() {
+		System.out.println("Sound stop!");
+	}
+}
+
+package com.test;
+
+/**
+ * 主板类
+ * @author yanerkang
+ *
+ */
+public class MainBoard {
+
+	 /**
+	  * 通过这个方法,主板上可以插入任何实现PCI接口规范的卡
+	  * 
+	  * @param pci 参数类型为接口,任何实现接口的类都可以传进来.
+	  */
+	public void usePCICard(PCI pci) {
+		pci.start();
+		pci.stop();
+	}
+
+}
+
+
+package com.test;
+
+public class Assembler {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		MainBoard mb=new MainBoard(); 
+		//在主板上插入网卡
+	    PCI nc=new NetworkCard(); 
+	    mb.usePCICard(nc); 
+	    
+	   //在主板上插入声卡
+	    PCI sc=new SoundCard(); 
+	    mb.usePCICard(sc); 
+	    
+		//在主板上插入显卡
+	    PCI gc=new GraphicCard(); 
+	    mb.usePCICard(gc); 
+	
+
+
+	}
+
+}
+
